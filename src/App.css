@@ -1,0 +1,152 @@
+/* App.css */
+
+/* Page background and centering */
+:root{
+  --bg1: #0f172a;   /* dark navy */
+  --bg2: #071124;   /* deeper navy */
+  --card: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  --accent: #7c5cff; /* purple accent */
+  --accent-2: #00d4ff; /* cyan accent */
+  --glass: rgba(255,255,255,0.04);
+  --muted: rgba(255,255,255,0.6);
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+*{box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+/* full page */
+.page{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent),
+              radial-gradient(900px 500px at 90% 90%, rgba(0,212,255,0.06), transparent),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: white;
+}
+
+/* Card */
+.card{
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px) saturate(110%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Header */
+.card-header{
+  text-align: center;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.title{
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.subtitle{
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Body - count */
+.card-body{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.count-wrap{
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(124,92,255,0.12), rgba(0,212,255,0.06));
+  box-shadow: 0 10px 30px rgba(7,10,33,0.6), inset 0 -6px 18px rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.count{
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+  text-shadow: 0 6px 24px rgba(124,92,255,0.12);
+}
+
+/* Buttons layout */
+.buttons{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Base button */
+.btn{
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 120ms ease;
+  user-select: none;
+  min-width: 110px;
+}
+
+/* Primary (Increase) */
+.btn-primary{
+  background: linear-gradient(90deg, var(--accent), #5a3bff);
+  box-shadow: 0 8px 24px rgba(124,92,255,0.22), 0 2px 6px rgba(7,10,33,0.45);
+  color: white;
+}
+.btn-primary:active{ transform: translateY(2px) scale(0.995); }
+.btn-primary:hover{ box-shadow: 0 12px 36px rgba(124,92,255,0.28); }
+
+/* Ghost (Decrease) */
+.btn-ghost{
+  background: var(--glass);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover{ transform: translateY(-2px); }
+
+/* Reset (subtle) */
+.btn-reset{
+  background: transparent;
+  color: var(--muted);
+  border: 1px dashed rgba(255,255,255,0.05);
+}
+.btn-reset:hover{ color: white; transform: translateY(-2px); }
+
+/* Footer */
+.card-footer{
+  text-align: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  padding-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 440px){
+  .card{ padding:18px; max-width: 360px; }
+  .count-wrap{ width: 140px; height: 140px; }
+  .count{ font-size: 3rem; }
+  .btn{ min-width: 100px; padding: 9px 12px; }
+}
