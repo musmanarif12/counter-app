@@ -8,3 +8,4 @@ Built for practicing **React Hooks** and basic component structure.
 - Reset the counter to zero
 - Demonstrates React concepts: **Functional Components**, **JSX**, **useState**, **Event Handling**
 
+<img width="1913" height="981" alt="Screenshot 2025-09-19 100346" src="https://github.com/user-attachments/assets/474800d2-e109-41a2-8d16-23448eded727" />
